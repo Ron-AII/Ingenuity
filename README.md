@@ -45,9 +45,9 @@ class Website:
 # Function to generate a summary using Pegasus
 def summarize(url):
     website = Website(url)
-    #summarizer = pipeline("summarization", model="google/pegasus-xsum")  # Using Pegasus model for summarization
+    summarizer = pipeline("summarization", model="google/pegasus-xsum")  # Using Pegasus model for summarization
     #summarizer = pipeline("summarization", model="facebook/bart-large-cnn")  # Using BART model for summarization
-    summarizer = pipeline("summarization", model="t5-small")  # Using T5 model for summarization
+    #summarizer = pipeline("summarization", model="t5-small")  # Using T5 model for summarization
     # Preprocess the text: limit the length for the summarization model
     input_text = website.text[:2000]  # Adjust as needed; Both Pegasus & BART can handle longer inputs than T5. For T5 use 1000
     # Handle edge cases when the text is too short or empty
