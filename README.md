@@ -42,7 +42,7 @@ class Website:
             self.text = f"Error {response.status_code}: Could not retrieve content from the URL"
 
 
-# Function to generate a summary using Pegasus
+# Function to generate a summary using Pegasus, BART & T5
 def summarize(url):
     website = Website(url)
     summarizer = pipeline("summarization", model="google/pegasus-xsum")  # Using Pegasus model for summarization
